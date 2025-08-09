@@ -174,7 +174,7 @@ export default function NivelPage() {
             </Button>
           </div>
 
-          <Card variant={getDifficultyColor(level.difficulty) as any} className="mb-6">
+          <Card variant={getDifficultyColor(level.difficulty) as unknown} className="mb-6">
             <CardHeader>
               <div className="flex items-start justify-between">
                 <div className="flex-1">
@@ -232,7 +232,7 @@ export default function NivelPage() {
                     key={tab.id}
                     variant={activeTab === tab.id ? "default" : "ghost"}
                     className="w-full justify-start"
-                    onClick={() => setActiveTab(tab.id as any)}
+                    onClick={() => setActiveTab(tab.id as unknown)}
                   >
                     <tab.icon className="mr-2 h-4 w-4" />
                     {tab.label}

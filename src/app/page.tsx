@@ -321,7 +321,7 @@ export default function HomePage() {
                 viewport={{ once: true }}
               >
                 <Card 
-                  variant={feature.color as any}
+                  variant={feature.color as unknown}
                   hover="lift"
                   className="h-full"
                 >

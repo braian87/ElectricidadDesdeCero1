@@ -132,7 +132,9 @@ export interface LevelCardProps extends CardProps {
 
 const LevelCard = React.forwardRef<HTMLDivElement, LevelCardProps>(
   ({ level, isCompleted, onClick, className, ...props }, ref) => {
-    const getDifficultyColor = (difficulty: string) => {
+    const getDifficultyColor = (
+      difficulty: string
+    ): 'default' | 'electric' | 'voltage' | 'current' | 'resistance' | 'glass' | 'darkGlass' | null | undefined => {
       switch (difficulty) {
         case 'beginner': return 'resistance';
         case 'intermediate': return 'voltage';
@@ -155,7 +157,7 @@ const LevelCard = React.forwardRef<HTMLDivElement, LevelCardProps>(
     return (
       <Card
         ref={ref}
-        variant={getDifficultyColor(level.difficulty) as any}
+  variant={getDifficultyColor(level.difficulty)}
         hover={level.isLocked ? "none" : "lift"}
         className={cn(
           "cursor-pointer transition-all duration-300",
