@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { cn } from "@/lib/utils";
+import Link from 'next/link';
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -213,7 +214,7 @@ export default function RootLayout({
               <div className="space-y-3">
                 <h4 className="font-medium">Aprender</h4>
                 <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li><a href="/niveles" className="hover:text-foreground transition-colors">Niveles</a></li>
+                  <li><link href="/niveles" className="hover:text-foreground transition-colors">Niveles</link></li>
                   <li><a href="/simulaciones" className="hover:text-foreground transition-colors">Simulaciones</a></li>
                   <li><a href="/calculadoras" className="hover:text-foreground transition-colors">Calculadoras</a></li>
                   <li><a href="/recursos" className="hover:text-foreground transition-colors">Recursos</a></li>

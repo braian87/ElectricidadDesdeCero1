@@ -369,7 +369,7 @@ export default function HomePage() {
                         <Star key={i} className="w-4 h-4 fill-voltage-400 text-voltage-400" />
                       ))}
                     </div>
-                    <p className="text-muted-foreground mb-4">"{testimonial.content}"</p>
+                    <p className="text-muted-foreground mb-4">&quot;{testimonial.content}&quot;</p>
                     <div className="flex items-center space-x-3">
                       <div className="w-10 h-10 bg-electric-100 rounded-full flex items-center justify-center">
                         <User className="w-5 h-5 text-electric-600" />

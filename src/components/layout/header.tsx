@@ -20,6 +20,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { useAppStore, useUser, useTheme, useNotifications } from '@/store';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
 interface HeaderProps {
   className?: string;
