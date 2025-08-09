@@ -1,0 +1,148 @@
+{
+  "name": "Prompt Maestro - Electricidad desde Cero",
+  "short_name": "Prompt Maestro",
+  "description": "La mejor plataforma educativa para aprender electricidad desde cero hasta nivel experto. Cursos interactivos, simulaciones y gamificación.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0ea5e9",
+  "theme_color": "#0ea5e9",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "es",
+  "dir": "ltr",
+  "categories": ["education", "productivity", "utilities"],
+  "screenshots": [
+    {
+      "src": "/screenshots/desktop-1.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Página principal en desktop"
+    },
+    {
+      "src": "/screenshots/mobile-1.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Página principal en móvil"
+    },
+    {
+      "src": "/screenshots/levels-1.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Niveles educativos"
+    }
+  ],
+  "icons": [
+    {
+      "src": "/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Niveles",
+      "short_name": "Niveles",
+      "description": "Accede directamente a los niveles educativos",
+      "url": "/niveles",
+      "icons": [
+        {
+          "src": "/icons/shortcut-levels.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Simulaciones",
+      "short_name": "Simulaciones",
+      "description": "Experimenta con simulaciones interactivas",
+      "url": "/simulaciones",
+      "icons": [
+        {
+          "src": "/icons/shortcut-simulations.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Calculadoras",
+      "short_name": "Calculadoras",
+      "description": "Usa nuestras calculadoras especializadas",
+      "url": "/calculadoras",
+      "icons": [
+        {
+          "src": "/icons/shortcut-calculators.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Foro",
+      "short_name": "Foro",
+      "description": "Conecta con la comunidad",
+      "url": "/foro",
+      "icons": [
+        {
+          "src": "/icons/shortcut-forum.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "handle_links": "preferred",
+  "capture_links": "existing-client-navigate"
+}
+

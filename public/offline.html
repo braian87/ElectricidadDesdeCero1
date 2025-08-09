@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sin Conexión - Prompt Maestro</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 30px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .features {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .features h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .features ul {
+            list-style: none;
+            space-y: 10px;
+        }
+
+        .features li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .features li::before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+            top: 8px;
+        }
+
+        .button {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .button.primary {
+            background: rgba(255, 255, 255, 0.9);
+            color: #0ea5e9;
+        }
+
+        .button.primary:hover {
+            background: white;
+        }
+
+        .status {
+            margin-top: 30px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            font-size: 0.9rem;
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .electric-animation {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .button {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="electric-animation"></div>
+    
+    <div class="container">
+        <div class="icon pulse">
+            ⚡
+        </div>
+        
+        <h1>Sin Conexión</h1>
+        
+        <p>
+            No hay conexión a internet, pero no te preocupes. 
+            Prompt Maestro funciona offline y puedes seguir aprendiendo.
+        </p>
+
+        <div class="features">
+            <h3>Disponible Offline:</h3>
+            <ul>
+                <li>Niveles ya visitados</li>
+                <li>Contenido teórico descargado</li>
+                <li>Calculadoras básicas</li>
+                <li>Progreso guardado localmente</li>
+                <li>Simulaciones offline</li>
+            </ul>
+        </div>
+
+        <div>
+            <button class="button primary" onclick="tryReconnect()">
+                Intentar Reconectar
+            </button>
+            <a href="/" class="button">
+                Ir al Inicio
+            </a>
+            <a href="/niveles" class="button">
+                Ver Niveles
+            </a>
+        </div>
+
+        <div class="status">
+            <div id="connection-status">
+                Verificando conexión...
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Verificar estado de conexión
+        function updateConnectionStatus() {
+            const status = document.getElementById('connection-status');
+            if (navigator.onLine) {
+                status.innerHTML = '🟢 Conexión restaurada - Puedes continuar navegando';
+                status.style.background = 'rgba(34, 197, 94, 0.2)';
+                
+                // Recargar automáticamente después de 2 segundos
+                setTimeout(() => {
+                    window.location.reload();
+                }, 2000);
+            } else {
+                status.innerHTML = '🔴 Sin conexión a internet';
+                status.style.background = 'rgba(239, 68, 68, 0.2)';
+            }
+        }
+
+        // Intentar reconectar
+        function tryReconnect() {
+            const button = event.target;
+            button.innerHTML = 'Verificando...';
+            button.disabled = true;
+            
+            // Simular verificación
+            setTimeout(() => {
+                if (navigator.onLine) {
+                    window.location.reload();
+                } else {
+                    button.innerHTML = 'Intentar Reconectar';
+                    button.disabled = false;
+                    updateConnectionStatus();
+                }
+            }, 1000);
+        }
+
+        // Escuchar cambios de conexión
+        window.addEventListener('online', updateConnectionStatus);
+        window.addEventListener('offline', updateConnectionStatus);
+
+        // Verificar estado inicial
+        updateConnectionStatus();
+
+        // Verificar periódicamente
+        setInterval(updateConnectionStatus, 5000);
+
+        // Registrar service worker si está disponible
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(registration => {
+                    console.log('SW registered:', registration);
+                })
+                .catch(error => {
+                    console.log('SW registration failed:', error);
+                });
+        }
+
+        // Manejar instalación de PWA
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            
+            // Mostrar botón de instalación
+            const installButton = document.createElement('button');
+            installButton.className = 'button';
+            installButton.innerHTML = '📱 Instalar App';
+            installButton.onclick = () => {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('PWA installed');
+                    }
+                    deferredPrompt = null;
+                    installButton.remove();
+                });
+            };
+            
+            document.querySelector('.container').appendChild(installButton);
+        });
+    </script>
+</body>
+</html>
+
