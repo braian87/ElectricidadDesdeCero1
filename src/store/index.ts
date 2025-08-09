@@ -342,11 +342,11 @@ interface PWAStore {
   isInstalled: boolean;
   isOnline: boolean;
   updateAvailable: boolean;
-  installPrompt: any;
+  installPrompt: unknown;
   setInstalled: (installed: boolean) => void;
   setOnline: (online: boolean) => void;
   setUpdateAvailable: (available: boolean) => void;
-  setInstallPrompt: (prompt: any) => void;
+  setInstallPrompt: (prompt: unknown) => void;
   install: () => Promise<void>;
   update: () => void;
 }

@@ -87,7 +87,7 @@ export interface InteractiveElement {
   title: string;
   description: string;
   component: string; // Nombre del componente React
-  props?: Record<string, any>;
+  props?: Record<string, unknown>;
 }
 
 export interface Diagram {
@@ -235,7 +235,7 @@ export interface CircuitElement {
   value?: number;
   unit?: string;
   connections: string[];
-  properties: Record<string, any>;
+  properties: Record<string, unknown>;
 }
 
 export interface Circuit {
@@ -332,7 +332,7 @@ export interface AnalyticsEvent {
   id: string;
   userId: string;
   event: string;
-  properties: Record<string, any>;
+  properties: Record<string, unknown>;
   timestamp: Date;
   sessionId: string;
 }
@@ -385,7 +385,7 @@ export interface PWAInstallPrompt {
 
 export interface ServiceWorkerMessage {
   type: 'SKIP_WAITING' | 'CACHE_UPDATED' | 'OFFLINE_READY';
-  payload?: any;
+  payload?: unknown;
 }
 
 // Tipos de utilidad
@@ -418,13 +418,13 @@ export interface FormField {
     min?: number;
     max?: number;
     pattern?: string;
-    custom?: (value: any) => boolean | string;
+  custom?: (value: unknown) => boolean | string;
   };
   options?: { value: string; label: string }[];
 }
 
 export interface FormState {
-  values: Record<string, any>;
+  values: Record<string, unknown>;
   errors: Record<string, string>;
   touched: Record<string, boolean>;
   isSubmitting: boolean;
@@ -432,30 +432,5 @@ export interface FormState {
 }
 
 // Exportar todos los tipos como un namespace para facilitar el uso
-export namespace ElectricityApp {
-  export type {
-    User,
-    UserPreferences,
-    UserProgress,
-    Level,
-    LevelContent,
-    Quiz,
-    Question,
-    Achievement,
-    Circuit,
-    CircuitElement,
-    AppState,
-    Notification,
-    Badge,
-    ForumPost,
-    AnalyticsEvent,
-    AppConfig,
-    PWAInstallPrompt,
-    LoadingState,
-    ApiResponse,
-    PaginatedResponse,
-    FormField,
-    FormState,
-  };
-}
+// Los tipos se exportan individualmente, no como namespace.
 
